@@ -6,6 +6,7 @@
 	<title>Dashboard page</title>
 </head>
 <body>
-	<h1>Dashboard page</h1>
+	<h3>Hey, {{ $name }}</h3>
+	<p>{{$about}}</p>
 </body>
 </html>

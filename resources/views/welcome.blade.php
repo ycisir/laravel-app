@@ -7,6 +7,7 @@
 </head>
 <body>
 	<h1>Welcome to Laravel</h1>
-	<h3>Hey, {{ $name }}</h3>
+	{{--<h3>Hey, {{ $name }}</h3>--}}
+	@include('dashboard', ['about' => 'Hey there I am learning PHP/Laravel'])
 </body>
 </html>
