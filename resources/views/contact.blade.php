@@ -7,7 +7,7 @@
 </head>
 <body>
 	<h1>Contact page</h1>
-	<p>Hey contact {{ $name }} at {{ $email }}</p>
-	{{-- this is comments <p>Hey contact me at {{ $email }}</p>--}}
+	<p>Hey contact me at {{ $email }}</p>
+	{{-- <p>this is comment in blade template</p> --}}
 </body>
 </html>

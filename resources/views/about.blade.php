@@ -6,6 +6,6 @@
 	<title>About page</title>
 </head>
 <body>
-	<h1>Welcome to Laravel About page</h1>
+	<h1>Welcome, {{ $name }} to Laravel About page</h1>
 </body>
 </html>

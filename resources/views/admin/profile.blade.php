@@ -6,6 +6,6 @@
 	<title>Admin profile page</title>
 </head>
 <body>
-	<h1>Welcome to Laravel Admin profile page</h1>
+	<h1>Admin profile page</h1>
 </body>
 </html>

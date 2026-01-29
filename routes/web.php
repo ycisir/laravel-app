@@ -1,25 +1,23 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\AboutController; // make sure to import first
+use App\Http\Controllers\AdminProfileController;
+use App\Http\Controllers\DashboardController;
 
 Route::get('/', function() {
     return view('welcome');
 });
 
-Route::get('about', function() {
-    return view('about');
-});
+Route::get('about', [AboutController::class, 'show']);
+// Route::get('about/{name}', [AboutController::class, 'show']);
 
-Route::get('admin/profile', function() {
-    return view('admin.profile');
-});
+Route::get('admin/profile', [AdminProfileController::class, 'show_profile']);
 
 
-Route::get('contact', function() {
-    return view('contact', ['name' => 'Harry Potter', 'email' => 'harry@example.com']);
-});
+Route::get('contact', [AboutController::class, 'contact']);
 
+Route::get('dashboard', DashboardController::class);
 
 // when only pass single piece of data use with
 // Route::get('contact', function() {
@@ -75,7 +73,6 @@ Route::get('employee/{id}/{name}', function($id, $name) {
 
 // Route redirect
 Route::redirect('login-success', 'dashboard');
-Route::view('dashboard', 'dashboard');
 
 
 // Route redirect with status code
