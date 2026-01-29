@@ -4,9 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AboutController; // make sure to import first
 use App\Http\Controllers\AdminProfileController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ContactController;
 
 Route::get('/', function() {
-    return view('welcome');
+    return view('welcome', ['name' => 'Jack']);
 });
 
 Route::get('about', [AboutController::class, 'show']);
@@ -15,7 +16,7 @@ Route::get('about', [AboutController::class, 'show']);
 Route::get('admin/profile', [AdminProfileController::class, 'show_profile']);
 
 
-Route::get('contact', [AboutController::class, 'contact']);
+Route::get('contact', [ContactController::class, 'show']);
 
 Route::get('dashboard', DashboardController::class);
 

@@ -35,8 +35,8 @@ class AboutController extends Controller
     }
 
     // multiple methods inside controller
-    function contact() {
-        $email = 'harry@example.com';
-        return view('contact', ['email' => $email]);
-    }
+    // function contact() {
+    //     $email = 'harry@example.com';
+    //     return view('contact', ['email' => $email]);
+    // }
 }
