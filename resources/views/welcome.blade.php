@@ -24,6 +24,12 @@
 
 	<hr>
 
+	{{--slot and named slot--}}
+	<x-alert>
+		<x-slot name='title'>Alert Title</x-slot>
+		<span>Hey this is alert!</span>
+	</x-alert>
+
 	{{--anonymous components--}}
 	<x-banner title='Laptop 15% OFF' desc='From this weekend to next weekend sale is live now' />
 	<x-banner title='Mobile 23% OFF' desc='Exclusive offer on top brands mobile phones' />
