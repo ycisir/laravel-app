@@ -29,6 +29,10 @@ class Card extends Component
         return view('components.card');
     }
 
+    // components are a reusable group of elements
+    // two types of components
+    // 1. class based
+    // 2. anonymous
 
     // Component method
     public function addNumbers(...$numbers)

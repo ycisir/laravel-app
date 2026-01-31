@@ -24,7 +24,9 @@
 
 	<hr>
 
-
+	{{--anonymous components--}}
+	<x-banner title='Laptop 15% OFF' desc='From this weekend to next weekend sale is live now' />
+	<x-banner title='Mobile 23% OFF' desc='Exclusive offer on top brands mobile phones' />
 
 	{{--components--}}
 	<x-card name='Harry Potter' department='Wizardry' roll-no=7 class='my-class' />
