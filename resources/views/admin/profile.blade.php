@@ -1,11 +1,18 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Admin profile page</title>
-</head>
-<body>
-	<h1>Admin profile page</h1>
-</body>
-</html>
+@extends('layout.admin-layout')
+@section('title', 'Admin profile page')
+
+{{--override default section--}}
+@section('default')
+    @extends('components/include/header')
+@endsection
+
+@section('page-name')
+	<h1>Profile page</h1>
+	<hr>
+@endsection
+
+@section('banner', 'Profile banner')
+
+@section('main-content')
+	<h1>Welcom, {{$name}}</h1>
+@endsection

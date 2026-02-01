@@ -1,6 +1,6 @@
 <x-layout>
 	<x-slot name='title'>Home page</x-slot>
-	
+
 	<x-slot name='navbar'>
 		<x-include.header />
 	</x-slot>

@@ -14,14 +14,14 @@ Route::get('/', function() {
 Route::get('product', [ProductController::class, 'show']);
 
 
-Route::get('about', [AboutController::class, 'show']);
+// Route::get('about', [AboutController::class, 'show']);
 // Route::get('about/{name}', [AboutController::class, 'show']);
 
-// Route::get('admin/profile', [AdminProfileController::class, 'show_profile']);
+Route::get('admin/profile', [AdminProfileController::class, 'show_profile']);
 
-Route::get('contact', [ContactController::class, 'show']);
+// Route::get('contact', [ContactController::class, 'show']);
 
-// Route::get('dashboard', DashboardController::class);
+Route::get('dashboard', DashboardController::class);
 
 
 // when only pass single piece of data use with

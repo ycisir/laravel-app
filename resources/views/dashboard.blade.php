@@ -1,12 +1,19 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Dashboard page</title>
-</head>
-<body>
-	<h3>Hey, {{ $name }}</h3>
-	<p>{{$about}}</p>
-</body>
-</html>
+@extends('layout.admin-layout')
+@section('title', 'Dashboard page') {{--@section provide data--}}
+
+{{--override default section--}}
+@section('default')
+	@parent {{--also get default data--}}
+    Navigation for dashboard
+@endsection
+
+@section('page-name')
+	<h1>Dashboard page</h1>
+	<hr>
+@endsection
+
+@section('banner', 'Dashboard banner')
+
+@section('main-content')
+	<p>Dashboard main content</p>
+@endsection
