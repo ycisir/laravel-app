@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>About page</title>
-</head>
-<body>
+<x-layout>
+	<x-slot name='title'>About page</x-slot>
+	<x-slot name='navbar'>
+		<x-include.header />
+	</x-slot>
 	<h1>Welcome, {{ $name }} to Laravel About page</h1>
-</body>
-</html>
+</x-layout>

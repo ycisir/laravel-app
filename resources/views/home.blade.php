@@ -1,17 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Home page</title>
-	<style>
-		.my-class {
-			color: red;
-		}
-	</style>
-</head>
-<body>
-	<x-include.header />
+<x-layout>
+	<x-slot name='title'>Home page</x-slot>
+	
+	<x-slot name='navbar'>
+		<x-include.header />
+	</x-slot>
+
 	<h1>Welcome to Laravel</h1>
 	{{--<h3>Hey, {{ $name }}</h3>--}}
 	@include('dashboard', ['about' => 'Hey there I am learning PHP/Laravel'])
@@ -24,7 +17,10 @@
 
 	<hr>
 
-	{{--slot and named slot--}}
+	{{--slot and named slot
+	We often need to pass additional content to our component via slots
+	component slots are rendered by echoing $slot variable
+	--}}
 	<x-alert>
 		<x-slot name='title'>Alert Title</x-slot>
 		<span>Hey this is alert!</span>
@@ -39,6 +35,4 @@
 	<x-card name='Ron Weasely' department='Wizardry' roll-no=18 />
 	<x-card name='Hermoine Granger' department='Wizardry' rollNo=3 />
 	<x-card :name=$name department='Pirate' roll-no=47 />
-	
-</body>
-</html>
+</x-layout>

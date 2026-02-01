@@ -8,18 +8,18 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProductController;
 
 Route::get('/', function() {
-    return view('welcome', ['name' => 'Jack']);
+    return view('home', ['name' => 'Jack']);
 });
 
 Route::get('product', [ProductController::class, 'show']);
 
 
-// Route::get('about', [AboutController::class, 'show']);
+Route::get('about', [AboutController::class, 'show']);
 // Route::get('about/{name}', [AboutController::class, 'show']);
 
 // Route::get('admin/profile', [AdminProfileController::class, 'show_profile']);
 
-// Route::get('contact', [ContactController::class, 'show']);
+Route::get('contact', [ContactController::class, 'show']);
 
 // Route::get('dashboard', DashboardController::class);
 

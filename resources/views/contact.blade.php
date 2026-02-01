@@ -1,11 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Contact page</title>
-</head>
-<body>
+<x-layout>
+	<x-slot name='title'>About page</x-slot>
+	
+	<x-slot name='navbar'>
+		<x-include.header />
+	</x-slot>
+
 	<h1>Contact page</h1>
 	<hr>
 	{{--displaying data--}}
@@ -183,5 +182,4 @@
 	@endforelse
 	--}}
 
-</body>
-</html>
+</x-layout>
