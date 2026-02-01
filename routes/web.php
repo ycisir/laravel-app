@@ -8,20 +8,20 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProductController;
 
 Route::get('/', function() {
-    return view('home', ['name' => 'Jack']);
-});
+    return view('home', ['name'=>'Jack']);
+})->name('home');
 
-Route::get('product', [ProductController::class, 'show']);
+Route::get('product/{category}', [ProductController::class, 'show'])->name('product');
 
 
-// Route::get('about', [AboutController::class, 'show']);
+Route::get('about', [AboutController::class, 'show'])->name('about');
 // Route::get('about/{name}', [AboutController::class, 'show']);
 
-Route::get('admin/profile', [AdminProfileController::class, 'show_profile']);
+// Route::get('admin/profile', [AdminProfileController::class, 'show_profile']);
 
 // Route::get('contact', [ContactController::class, 'show']);
 
-Route::get('dashboard', DashboardController::class);
+// Route::get('dashboard', DashboardController::class);
 
 
 // when only pass single piece of data use with
@@ -32,9 +32,10 @@ Route::get('dashboard', DashboardController::class);
 
 // If your route only needs to return a view, you may use the Route::view method
 // Route::view('about', 'about');
+// Route::view('post/', 'about');
 // Route::view('admin/profile', 'admin.profile');
 // Route::view('contact', 'contact', ['email' => 'harry@example.com']);
-// Route::view('contact', 'contact', ['name' => 'Harry Potter', 'email' => 'harry@example.com']);
+Route::view('contact', 'contact', ['name' => 'Harry Potter', 'email' => 'harry@example.com'])->name('contact');
 
 
 // Parameterized route

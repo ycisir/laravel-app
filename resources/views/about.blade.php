@@ -3,5 +3,5 @@
 	<x-slot name='navbar'>
 		<x-include.header />
 	</x-slot>
-	<h1>Welcome, {{ $name }} to Laravel About page</h1>
+	<h1>About page</h1>
 </x-layout>

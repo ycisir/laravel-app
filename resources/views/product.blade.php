@@ -1,13 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Product - {{$name}}</title>
-</head>
-<body>
+<x-layout>
+	<x-slot name='title'>About page</x-slot>
+	<x-slot name='navbar'>
+		<x-include.header />
+	</x-slot>
 	<h1>Product page</h1>
-	<hr>
 	{{--child 'laptops' view can also access variable $name--}}
 	{{--here if laptops view not available include gives View [laptops] not found--}}
 	{{--@include('laptops', ['count' => 5])--}}
@@ -37,5 +33,4 @@
 	@once
 		<p>This code will run once per rendering cycle</p>
 	@endonce
-</body>
-</html>
+</x-layout>
