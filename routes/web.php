@@ -1,60 +1,47 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AboutController; // make sure to import first
-use App\Http\Controllers\AdminProfileController;
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\ContactController;
-use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ReportController; // make sure to import first
+use App\Http\Middleware\UnderConstruction;
 
-Route::get('/', function() {
-    return view('home', ['name'=>'Jack']);
+
+Route::get('/', function(){
+    return view('home');
 })->name('home');
 
-Route::get('product/{category}', [ProductController::class, 'show'])->name('product');
+Route::get('dashboard', function(){
+    return view('dashboard');
+})->name('dashboard')->middleware(UnderConstruction::class.':guest');
 
 
-Route::get('about', [AboutController::class, 'show'])->name('about');
-// Route::get('about/{name}', [AboutController::class, 'show']);
+// Route middleware with addition args
+Route::get('stock', function(){
+    return view('stock');
+})->name('stock')->middleware(UnderConstruction::class.':guest');
 
-// Route::get('admin/profile', [AdminProfileController::class, 'show_profile']);
-
-// Route::get('contact', [ContactController::class, 'show']);
-
-// Route::get('dashboard', DashboardController::class);
+Route::get('report', [ReportController::class, 'show'])->name('report')->middleware(UnderConstruction::class.':guest');
 
 
-// when only pass single piece of data use with
-// Route::get('contact', function() {
-//     return view('contact')->with('email', 'harry@example.com');
+
+// Groups middleware
+// Route::get('stock', function(){
+//     return view('stock');
+// })->name('stock')->middleware(['construction']);
+
+// Route::get('report', [ReportController::class, 'show'])->name('report')->middleware(['construction']);
+
+
+// Groups middleware same as above
+// Route::middleware(['construction'])->group(function() {
+//     Route::get('stock', function(){
+//         return view('stock');
+//     })->name('stock')->middleware(['construction']);
+
+//     Route::get('report', [ReportController::class, 'show'])->name('report')->middleware(['construction']);
+
 // });
 
 
-// If your route only needs to return a view, you may use the Route::view method
-// Route::view('about', 'about');
-// Route::view('post/', 'about');
-// Route::view('admin/profile', 'admin.profile');
-// Route::view('contact', 'contact', ['email' => 'harry@example.com']);
-Route::view('contact', 'contact', ['name' => 'Harry Potter', 'email' => 'harry@example.com'])->name('contact');
-
-
-// Parameterized route
-// Route::get('user/{id}', function($id) {
-//     return view('user', ["id" => $id]);
-// });
-
-
-// Multiple parameterized route
-// Route::get('post/{postId}/comment/{commentId}', function($postId, $commentId) {
-//     return view('post', ['postId' => $postId, 'commentId' => $commentId]);
-// });
-
-
-// Optional paramaterized route
-// also set default like $name = 'jack' instead of null
-// Route::get('student/{name?}', function($name = null) {
-//     return view('student', ['name' => $name]);
-// });
 
 
 // Parameterized route with regex

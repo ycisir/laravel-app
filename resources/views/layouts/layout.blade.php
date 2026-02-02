@@ -13,12 +13,7 @@ the @endsection dirctive will only define a section while @show will define and 
     <title>@yield('title')</title>{{--@yield recieved data--}}
 </head>
 <body>
-    @section('default')
-        Navigation
-    @show
-
-    @yield('page-name')
-    @yield('banner')
-    @yield('main-content')
+    @include('layouts.header')
+    @yield('content')
 </body>
 </html>
