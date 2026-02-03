@@ -11,5 +11,8 @@
 	<li>
 		<a href="{{ route('report') }}">Report</a>
 	</li>
+	<li>
+		<a href="{{ route('new') }}">Register</a>
+	</li>
 </ul>
 <hr>

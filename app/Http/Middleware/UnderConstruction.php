@@ -27,9 +27,9 @@ class UnderConstruction
         // throw new HttpException(503);
         
         // explore handle method
-        if($role == 'guest') {
-            return redirect('/');
-        }
+        // if($role == 'guest') {
+        //     return redirect('/');
+        // }
         return($next($request));
         
     }

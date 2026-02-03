@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ReportController; // make sure to import first
+use App\Http\Controllers\RegistrationController;
 use App\Http\Middleware\UnderConstruction;
 
 
@@ -20,6 +21,11 @@ Route::get('stock', function(){
 })->name('stock')->middleware(UnderConstruction::class.':guest');
 
 Route::get('report', [ReportController::class, 'show'])->name('report')->middleware(UnderConstruction::class.':guest');
+
+Route::get('register', [RegistrationController::class, 'new'])->name('new');
+Route::post('register', [RegistrationController::class, 'register'])->name('register');
+
+Route::view('olddata', 'olddata')->name('old');
 
 
 
