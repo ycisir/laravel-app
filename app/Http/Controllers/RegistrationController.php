@@ -4,6 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Rules\Uppercase;
+
+use Illuminate\Support\Facades\Validator;
+use Closure;
+
 class RegistrationController
 {
     public function register(Request $request)
@@ -99,16 +104,36 @@ class RegistrationController
 
 
         // Multiple rule
-        $validate = $request->validate([
-            'name' => 'required|min:10', // also written in ['required', 'min:20']
-            'email' => 'required|email',
+        $validated = $request->validate([
+            // 'name' => 'required|min:10|string| new Uppercase', // also written in ['required', 'min:20']
+
+            // custom valudation rules 
+            // two types
+            // 1. Rule Object
+            // 2. Closure
+
+            // 1. Using Rule Object
+            'name' => ['required', 'min:10', 'string', new Uppercase],
+
+
+            // 2. Using Closure (use this if want to use for one attribute)
+            'email' => [
+                'required',
+                'email',
+                function($attribute, $value, $fail) {
+                    if($value == 'admin@example.com') {
+                        $fail("$attribute address is invalid!");
+                    }
+                }
+            ],
+
             'password' => 'required|min:6',
         ]);
 
-
+        // dd($validated);
         print_r('form validated');
-        $input = $request->except('_token');
-        return view('register', ['data'=>$input]);
+        // $input = $request->except('_token');
+        return view('register', ['data'=>$validated]);
     }
 
 
