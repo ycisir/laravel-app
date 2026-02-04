@@ -179,18 +179,18 @@ return [
     */
 
     'custom' => [
-        'name' => [
-            'required' => ':attribute is required',
-            'min' => 'Min 10 characters required',
-        ],
-        'email' => [
-            'required' => ':attribute is required',
-            'email' => ':attribute should be in proper format',
-        ],
-        'password' => [
-            'required' => ':attribute is required',
-            'min' => 'Min 10 characters required',
-        ]
+        // 'name' => [
+        //     'required' => ':attribute is required',
+        //     'min' => 'Min 10 characters required',
+        // ],
+        // 'email' => [
+        //     'required' => ':attribute is required',
+        //     'email' => ':attribute should be in proper format',
+        // ],
+        // 'password' => [
+        //     'required' => ':attribute is required',
+        //     'min' => 'Min 10 characters required',
+        // ]
     ],
 
     /*
@@ -205,7 +205,7 @@ return [
     */
 
     'attributes' => [
-        'email' => 'email address',
+        // 'email' => 'email address',
     ],
 
 ];

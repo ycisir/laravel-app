@@ -9,10 +9,12 @@ use App\Rules\Uppercase;
 use Illuminate\Support\Facades\Validator;
 use Closure;
 
+use App\Http\Requests\RegistrationRequest;
+
 class RegistrationController
 {
-    public function register(Request $request)
-    {
+    // public function register(Request $request)
+    // {
         // dd($request);
         // print_r($request->all());
 
@@ -104,7 +106,7 @@ class RegistrationController
 
 
         // Multiple rule
-        $validated = $request->validate([
+        // $validated = $request->validate([
             // 'name' => 'required|min:10|string| new Uppercase', // also written in ['required', 'min:20']
 
             // custom valudation rules 
@@ -113,27 +115,36 @@ class RegistrationController
             // 2. Closure
 
             // 1. Using Rule Object
-            'name' => ['required', 'min:10', 'string', new Uppercase],
+            // 'name' => ['required', 'min:10', 'string', new Uppercase],
 
 
             // 2. Using Closure (use this if want to use for one attribute)
-            'email' => [
-                'required',
-                'email',
-                function($attribute, $value, $fail) {
-                    if($value == 'admin@example.com') {
-                        $fail("$attribute address is invalid!");
-                    }
-                }
-            ],
+        //     'email' => [
+        //         'required',
+        //         'email',
+        //         function($attribute, $value, $fail) {
+        //             if($value == 'admin@example.com') {
+        //                 $fail("$attribute address is invalid!");
+        //             }
+        //         }
+        //     ],
 
-            'password' => 'required|min:6',
-        ]);
+        //     'password' => 'required|min:6',
+        // ]);
 
         // dd($validated);
-        print_r('form validated');
+        // print_r('form validated');
         // $input = $request->except('_token');
-        return view('register', ['data'=>$validated]);
+        // return view('register', ['data'=>$validated]);
+    // }
+
+
+
+    // form validation using form request
+    public function register(RegistrationRequest $request) {
+        $request->validated();
+        $input = $request->except('_token');
+        return view('register', ['data'=>$input]);
     }
 
 
