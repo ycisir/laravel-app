@@ -83,7 +83,32 @@ class RegistrationController
         // return redirect('olddata')->withInput();
         // return redirect()->route('old')->withInput();
         // return redirect()->route('old')->withInput($request->except('password'));
-        return redirect()->route('register')->withInput($request->except('password'));
+        // return redirect()->route('register')->withInput($request->except('password'));
+
+
+        // $input = $request->input();
+        // $input = $request->except('_token');
+
+        // Single rule
+        // $validate = $request->validate([
+        //     'name' => 'required',
+        //     'email' => 'required',
+        //     'password' => 'required',
+        // ]);
+
+
+
+        // Multiple rule
+        $validate = $request->validate([
+            'name' => 'required|min:10', // also written in ['required', 'min:20']
+            'email' => 'required',
+            'password' => 'required|min:6',
+        ]);
+
+
+        print_r('form validated');
+        $input = $request->except('_token');
+        return view('register', ['data'=>$input]);
     }
 
 
