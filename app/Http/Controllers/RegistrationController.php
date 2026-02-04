@@ -101,7 +101,7 @@ class RegistrationController
         // Multiple rule
         $validate = $request->validate([
             'name' => 'required|min:10', // also written in ['required', 'min:20']
-            'email' => 'required',
+            'email' => 'required|email',
             'password' => 'required|min:6',
         ]);
 
