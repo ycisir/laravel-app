@@ -3,12 +3,16 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ReportController; // make sure to import first
 use App\Http\Controllers\RegistrationController;
+use App\Http\Controllers\StudentController;
 use App\Http\Middleware\UnderConstruction;
 
 
-Route::get('/', function(){
-    return view('home');
-})->name('home');
+// Route::get('/', function(){
+//     return view('home');
+// })->name('home');
+
+
+Route::get('/', [StudentController::class, 'index'])->name('home');
 
 Route::get('dashboard', function(){
     return view('dashboard');
