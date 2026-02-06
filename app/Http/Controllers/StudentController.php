@@ -36,7 +36,7 @@ class StudentController
 
         // Using Query Builder
         // retrieving all data from db
-        $students = DB::table('students')->get();
+        // $students = DB::table('students')->get();
 
 
         // retrieving single data from db
@@ -217,6 +217,16 @@ class StudentController
 
 
         // dd($id);
+
+
+
+
+        // Pagination using Query Builder
+
+        $students = DB::table('students')->paginate(5);
+        // $students->withPath('/cs/students'); // custom URL
+        // $students = DB::table('students')->simplePaginate(5); // simple paginate with only prev and next
+
         return view('home', ['students' => $students]);
     }
 }

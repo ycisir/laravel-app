@@ -18,4 +18,8 @@
 			</tr>
 		@endforeach
 	</table>
+
+	{{-- $students->links() --}}
+	{{ $students->links('pagination::bootstrap-5') }}
+	{{-- $students->links('pagination::simple-bootstrap-5') --}}
 @endsection

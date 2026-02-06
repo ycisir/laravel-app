@@ -11,6 +11,7 @@ the @endsection dirctive will only define a section while @show will define and 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield('title')</title>{{--@yield recieved data--}}
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}">
 </head>
 <body>
     @include('layouts.header')

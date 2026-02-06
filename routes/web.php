@@ -13,6 +13,7 @@ use App\Http\Middleware\UnderConstruction;
 
 
 Route::get('/', [StudentController::class, 'index'])->name('home');
+// Route::get('cs/students', [StudentController::class, 'index'])->name('home');
 
 Route::get('dashboard', function(){
     return view('dashboard');
